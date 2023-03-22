@@ -57,5 +57,5 @@ jobs:
           url: "https://${{ env.REVISION_FQDN }}/health" # Staging endpoint
       - name: Deploy succeeded
         run: |
-          echo "Deployment succeeded! Enabling new revision"
+          echo "Deployment succeeded! Enabling new revision "
           az containerapp ingress traffic set -n ${{ secrets.CONTAINER_APP_NAME }} -g ${{ secrets.RESOURCE_GROUP }} --revision-weight "${{ env.REVISION_NAME }}=100"
